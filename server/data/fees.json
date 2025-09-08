@@ -1,0 +1,29 @@
+{
+  "studentId": "2024001",
+  "studentName": "John Doe",
+  "semester": "Fall 2024",
+  "fees": {
+    "tuition": 15000,
+    "registration": 500,
+    "library": 200,
+    "laboratory": 300,
+    "sports": 100,
+    "total": 16100
+  },
+  "payments": [
+    {
+      "date": "2024-08-15",
+      "amount": 8000,
+      "method": "Bank Transfer",
+      "status": "Paid"
+    },
+    {
+      "date": "2024-09-15",
+      "amount": 8100,
+      "method": "Credit Card",
+      "status": "Paid"
+    }
+  ],
+  "balance": 0,
+  "status": "Fully Paid"
+}
