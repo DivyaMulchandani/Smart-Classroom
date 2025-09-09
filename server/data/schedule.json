@@ -1,0 +1,88 @@
+{
+  "studentId": "2024001",
+  "studentName": "John Doe",
+  "semester": "Fall 2024",
+  "schedule": [
+    {
+      "day": "Monday",
+      "classes": [
+        {
+          "time": "09:00 - 10:30",
+          "courseCode": "CS101",
+          "courseName": "Introduction to Computer Science",
+          "room": "CS-101",
+          "instructor": "Dr. Smith"
+        },
+        {
+          "time": "11:00 - 12:30",
+          "courseCode": "MATH201",
+          "courseName": "Calculus II",
+          "room": "MATH-205",
+          "instructor": "Prof. Johnson"
+        }
+      ]
+    },
+    {
+      "day": "Tuesday",
+      "classes": [
+        {
+          "time": "10:00 - 11:30",
+          "courseCode": "PHYS101",
+          "courseName": "Physics I",
+          "room": "PHYS-103",
+          "instructor": "Dr. Brown"
+        },
+        {
+          "time": "14:00 - 15:30",
+          "courseCode": "ENG101",
+          "courseName": "English Composition",
+          "room": "ENG-201",
+          "instructor": "Prof. Davis"
+        }
+      ]
+    },
+    {
+      "day": "Wednesday",
+      "classes": [
+        {
+          "time": "09:00 - 10:30",
+          "courseCode": "CS101",
+          "courseName": "Introduction to Computer Science",
+          "room": "CS-101",
+          "instructor": "Dr. Smith"
+        }
+      ]
+    },
+    {
+      "day": "Thursday",
+      "classes": [
+        {
+          "time": "11:00 - 12:30",
+          "courseCode": "MATH201",
+          "courseName": "Calculus II",
+          "room": "MATH-205",
+          "instructor": "Prof. Johnson"
+        },
+        {
+          "time": "14:00 - 15:30",
+          "courseCode": "PHYS101",
+          "courseName": "Physics I",
+          "room": "PHYS-103",
+          "instructor": "Dr. Brown"
+        }
+      ]
+    },
+    {
+      "day": "Friday",
+      "classes": [
+        {
+          "time": "10:00 - 11:30",
+          "courseCode": "ENG101",
+          "courseName": "English Composition",
+          "room": "ENG-201",
+          "instructor": "Prof. Davis"
+        }
+      ]
+    }
+  ]
+}
