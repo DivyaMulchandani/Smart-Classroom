@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { 
   ChevronDown, 
   ChevronRight, 
@@ -82,6 +82,25 @@ const menuItems: MenuItem[] = [
 export default function Sidebar({ activePage, onPageChange, isCollapsed, onToggleCollapse }: SidebarProps) {
   const [expandedSections, setExpandedSections] = useState<string[]>(['academic'])
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const [student, setStudent] = useState<{ name: string; email: string; profilePic?: string } | null>(null)
+
+  useEffect(() => {
+    async function load() {
+      const id = typeof window !== 'undefined' ? localStorage.getItem('studentId') : null
+      const token = typeof window !== 'undefined' ? localStorage.getItem('token') : null
+      if (!id || !token) return
+      try {
+        const res = await fetch(`http://localhost:3001/api/student/${id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        })
+        if (res.ok) {
+          const data = await res.json()
+          setStudent({ name: data.name, email: data.email, profilePic: data.profilePic })
+        }
+      } catch {}
+    }
+    load()
+  }, [])
 
   const toggleSection = (sectionId: string) => {
     setExpandedSections(prev => 
@@ -141,7 +160,7 @@ export default function Sidebar({ activePage, onPageChange, isCollapsed, onToggl
       <div className="p-4 border-b border-gray-200">
         <div className="flex items-center justify-between">
           {!isCollapsed && (
-            <h1 className="text-xl font-bold text-gray-800">Student ERP</h1>
+            <h1 className="text-xl font-bold text-gray-800">Rashtriya Raksha University</h1>
           )}
           <button
             onClick={onToggleCollapse}
@@ -246,8 +265,26 @@ export default function Sidebar({ activePage, onPageChange, isCollapsed, onToggl
       {/* Footer */}
       <div className="p-4 border-t border-gray-200">
         {!isCollapsed ? (
-          <div className="text-xs text-gray-500 text-center">
-            Student Portal v1.0
+          <div className="flex items-center justify-between text-xs text-gray-600">
+            {student ? (
+              <div className="flex items-center gap-2">
+                {student.profilePic ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={student.profilePic} alt="avatar" className="w-6 h-6 rounded-full" />
+                ) : (
+                  <div className="w-6 h-6 rounded-full bg-gray-300 flex items-center justify-center text-[10px]">
+                    {student.name?.charAt(0).toUpperCase()}
+                  </div>
+                )}
+                <div className="leading-tight">
+                  <div className="font-medium">{student.name}</div>
+                  <div className="text-gray-500">{student.email}</div>
+                </div>
+              </div>
+            ) : (
+              <div className="text-gray-500">Not signed in</div>
+            )}
+            <div className="text-gray-400">v1.0</div>
           </div>
         ) : (
           <div className="flex justify-center">

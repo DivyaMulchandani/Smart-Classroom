@@ -20,3 +20,4 @@ echo.
 echo Both servers are starting...
 echo Open your browser and go to: http://localhost:3000
 pause
+

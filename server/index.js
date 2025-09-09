@@ -1,6 +1,9 @@
+
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+require('dotenv').config();
+const connectDB = require('./db');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -15,7 +18,12 @@ const resultData = require('./data/results.json');
 const feesData = require('./data/fees.json');
 const scheduleData = require('./data/schedule.json');
 
+// Connect DB
+connectDB();
+
 // API Routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/student', require('./routes/student'));
 app.get('/api/attendance', (req, res) => {
   res.json(attendanceData);
 });
