@@ -1,0 +1,19 @@
+[
+  {
+    "id": "apt-1",
+    "studentId": "2024001",
+    "studentName": "John Doe",
+    "topic": "Course guidance",
+    "preferredTime": "2024-09-15T10:00:00Z",
+    "status": "pending"
+  },
+  {
+    "id": "apt-2",
+    "studentId": "2024002",
+    "studentName": "Jane Smith",
+    "topic": "Exam preparation",
+    "preferredTime": "2024-09-16T14:00:00Z",
+    "status": "pending"
+  }
+]
+

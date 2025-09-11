@@ -1,0 +1,27 @@
+{
+  "name": "smart-classroom-erp",
+  "version": "1.0.0",
+  "description": "Smart Classroom ERP System with Student and Admin panels",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd frontend/student && npm install && cd ../admin && npm install && cd ../../backend && npm install",
+    "dev:student": "cd frontend/student && npm run dev",
+    "dev:admin": "cd frontend/admin && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:student\" \"npm run dev:admin\"",
+    "build:student": "cd frontend/student && npm run build",
+    "build:admin": "cd frontend/admin && npm run build",
+    "build:all": "npm run build:student && npm run build:admin",
+    "start:student": "cd frontend/student && npm run start",
+    "start:admin": "cd frontend/admin && npm run start",
+    "start:backend": "cd backend && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "next": "^15.5.2",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  }
+}

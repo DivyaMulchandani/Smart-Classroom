@@ -1,0 +1,21 @@
+[
+  {
+    "code": "CS101",
+    "name": "Introduction to Computer Science",
+    "credits": 3,
+    "faculty": "Dr. Smith"
+  },
+  {
+    "code": "MATH201",
+    "name": "Calculus II",
+    "credits": 4,
+    "faculty": "Prof. Johnson"
+  },
+  {
+    "code": "PHYS101",
+    "name": "Physics I",
+    "credits": 4,
+    "faculty": "Dr. Brown"
+  }
+]
+
